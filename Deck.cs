@@ -32,8 +32,8 @@ namespace CardGame
         {
             for (int i = 0; i < 50; i++)
             {
-                int firstHalfCardAdress = random.Next(26);
-                int secondHalfCardAdress = random.Next(26, 52);
+                int firstHalfCardAdress = random.Next(26);// Gives a random value between 0 and 25.
+                int secondHalfCardAdress = random.Next(26, 52);// Gives a random value between 26 and 61.
 
                 Card empty = cards[firstHalfCardAdress];
                 cards[firstHalfCardAdress] = cards[secondHalfCardAdress];
