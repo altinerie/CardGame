@@ -87,7 +87,7 @@ namespace CardGame
             } while (last_player.CountCard() > 0);
         }
 
-        //PlayTrick method is called until there are no cards left in the Deck.
+        //PlayTrick method is called until there are no cards left.
         public void PlayGame()
         {
             while (deck.CountCard() > 0)
