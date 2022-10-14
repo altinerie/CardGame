@@ -54,7 +54,8 @@ namespace CardGame
             return false;
         }
 
-        private void PlayRound()
+        
+        private void PlayRound() //Each player plays one card.
         {
             foreach (Player p in players)
             {
@@ -63,6 +64,7 @@ namespace CardGame
 
                 if (CheckRule(given))
                 {
+                    //If the rule works (true), the cards on the desk pass to the player, no cards are left on the desk.
                     place.Add(given);
                     p.Collect(place);
                     place.Clear();
@@ -74,6 +76,7 @@ namespace CardGame
 
             }
         }
+        //First a hand of cards is dealt, then the PlayRound method is run until the players have no cards left.
         public void PlayTrick()
         {
             Player last_player = players.LastOrDefault();
@@ -84,6 +87,7 @@ namespace CardGame
             } while (last_player.CountCard() > 0);
         }
 
+        //PlayTrick method is called until there are no cards left in the Deck.
         public void PlayGame()
         {
             while (deck.CountCard() > 0)
